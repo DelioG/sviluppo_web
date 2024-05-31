@@ -1,0 +1,99 @@
+/* *************************************************************************** */
+/* LOGIN-SYSTEM                                                                */
+/* *************************************************************************** */
+    
+    /* **************************************** */
+    /* FORM-CONTAINER                           */
+    /* **************************************** */
+
+	.container-form-signup-login
+	{
+		display: flex;
+        justify-content: center;
+        align-items: center;
+
+		height: 100vh;
+    }
+
+		.form-signup-login
+		{
+            padding: 25px;
+			border: 1px solid var(--color-7);
+            border-radius: 4.5px;
+            box-shadow: 2px 2px var(--color-4);
+            
+            width: 350px;
+            overflow-x: auto;
+		}
+
+            .form-signup-login .brand
+            {
+                font-family: var(--font-righteous);
+                font-size: 25px;
+                text-align: center;
+            }
+
+                .form-signup-login .brand a
+                {
+                    color: var(--color-text-dark);
+                }
+
+            .form-signup-login .descrizione
+            {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .form-signup-login .to-login
+            {
+                text-align: center;
+            }
+
+                .form-signup-login .to-login a
+                {
+                    
+                }
+
+                .form-signup-login .to-login a:hover
+                {
+                    color: var(--color-2);
+                }
+
+        .form-signup-login form
+		{
+			
+		}
+
+            .form-signup-login form p
+            {
+                margin-bottom: 5px;
+            }
+
+            .form-signup-login form input, .form-signup-login form button
+            {
+                padding: 7px;
+                border-radius: 2.5px;
+            }
+
+            .form-signup-login form input
+            {
+                width: 100%;
+                border: 1px solid var(--color-7);
+            }
+
+            .form-signup-login form button
+            {
+                display: block;
+                width: 100%;
+
+                background-color: var(--color-3);
+                color: var(--color-2);
+                border: 1px solid var(--color-7);
+            }
+
+            .form-signup-login form button:hover
+            {
+                background-color: var(--color-1);
+                color: var(--color-2);
+                border: 1px solid var(--color-1);
+            }

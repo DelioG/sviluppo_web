@@ -1,0 +1,38 @@
+/* *************************************************************************** */
+/* COLUMNS SYSTEM                                                              */
+/* *************************************************************************** */
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+}
+
+    .container
+    {
+        padding: 28px;
+        text-align: justify;
+    }
+
+        .col-sx
+        {
+            height: calc(100vh - 45px);
+            overflow-y: auto;
+            z-index: 3;
+
+            flex-grow: 0.3;
+            flex-shrink: 1;
+            flex-basis: auto;
+
+            background-color: var(--color-3);
+            border-right: 1px solid var(--color-5);
+        }   
+
+        .col-dx
+        {
+            flex: 5;
+            height: calc(100vh - 45px);
+            overflow-y: auto;
+
+            background-color: rgba(234, 231, 220, 0.25);
+        }

@@ -1,0 +1,473 @@
+/* *************************************************************************** */
+/* COL-DX                                                                      */
+/* *************************************************************************** */
+
+
+    /* *************************************************************************** */
+    /* COL-DX | PATH                                                               */
+    /* *************************************************************************** */
+
+    .col-dx .path
+    {
+        background-color: var(--color-4);
+        border-bottom: 1px solid var(--color-5);
+        padding: 8px 28px;
+            
+        Font-size: 12px;
+    }
+
+        .col-dx .path p a
+        {
+            color: var(--color-text-dark);
+        }
+            
+        .col-dx .path p a:hover
+        {
+            color: var(--color-2);
+        }
+
+    /* *************************************************************************** */
+    /* COL-DX | ERROR-MESSAGE                                                      */
+    /* *************************************************************************** */
+
+    .col-dx .error-message
+    {
+        background-color: var(--color-4);
+        color: var(--color-danger);
+        border: 1px solid var(--color-5);
+        border-radius: 6.5px;
+        padding: 12px;
+
+        margin: 15px 0;
+    }
+
+    /* *************************************************************************** */
+    /* COL-DX | RESULTS-FOUND                                                      */
+    /* *************************************************************************** */
+
+    .col-dx .result-found
+    {
+        margin: 15px 0;
+    }
+
+        .col-dx .result-found .typology
+        {
+            display: inline-block;
+            padding: 5px 20px;
+            font-size: 12.5px;
+
+            background-color: var(--color-4);
+            border: 1px solid var(--color-5);
+            border-bottom: 0;
+            border-top-left-radius: 6.5px;
+            border-top-right-radius: 6.5px;
+        }
+
+        .col-dx .result-found .details
+        {
+            background-color: var(--color-3);
+            
+            border: 1px solid var(--color-5);
+            border-bottom-left-radius: 6.5px;
+            border-bottom-right-radius: 6.5px;
+            border-top-right-radius: 6.5px;
+        }
+
+        .col-dx .result-found .details:hover
+        {
+            background-color: var(--color-1);
+        }
+
+        .col-dx .result-found .details:hover a
+        {
+            color: var(--color-2);
+        }
+
+        .col-dx .result-found a
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+    /* *************************************************************************** */
+    /* COL-DX | CREATE-NEW                                                         */
+    /* *************************************************************************** */
+
+    .col-dx .create-new
+    {
+        background-color: var(--color-4);
+        border: 1px solid var(--color-5);
+        border-radius: 6.5px;
+        padding: 12px;
+    }
+
+        .col-dx .create-new p
+        {
+            
+        }
+
+        .col-dx .create-new form
+        {
+            margin: 15px 0;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+            .col-dx .create-new form input, .col-dx .create-new form button
+            {
+                padding: 7px;
+                border-radius: 4.5px;
+            }
+
+            .col-dx .create-new form input
+            {
+                width: calc(100vw - 50px);
+
+                background-color: var(--color-3);
+                border: 1px solid var(--color-7);
+            }
+
+                .col-dx .create-new form input::placeholder
+                {
+                    color: var(--color-text-dark);
+                    font-size: 12px;
+                }
+        
+                .col-dx .create-new form input:focus
+                {
+                    border-color: var(--color-2);
+                }
+
+            .col-dx .create-new form button
+            {
+                margin-left: 10px;
+                width: 50px;
+
+                background-color: var(--color-3);
+                border: 1px solid var(--color-7);
+            }
+
+                .col-dx .create-new form button:hover
+                {
+                    background-color: var(--color-2);
+                    color: var(--color-text-bright);
+                }
+
+        .col-dx .create-new .remaining-chars
+        {
+            text-align: right;
+        }
+
+            .col-dx .create-new .remaining-chars p
+            {
+                font-size: 13px;
+            }
+
+                .col-dx .create-new .remaining-chars p label
+                {
+                    color: var(--color-2);
+                }
+
+        .col-dx .create-new .famiglie-libere
+        {
+            margin-top: 15px;
+            display: none;
+        }
+
+    /* *************************************************************************** */
+    /* COL-DX | RESULTS PRINT                                                      */
+    /* *************************************************************************** */
+
+    .col-dx .results-print
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: var(--color-4);
+        border: 1px solid var(--color-5);
+        border-radius: 6.5px;
+        padding: 12px;
+
+        margin: 15px 0;
+    }
+
+        .col-dx .results-print label
+        {
+            color: var(--color-2);
+        }
+
+        .col-dx .results-print button
+        {
+            background-color: var(--color-3);
+            color: var(--color-text-dark);
+            border: 1px solid var(--color-7);
+            border-radius: 6.5px;
+            padding: 5px 10px;
+            font-size: 15px;
+            margin-left: 5px;
+        }
+
+        .col-dx .results-print button:hover
+        {
+            background-color: var(--color-2);
+            border: 1px solid var(--color-2);
+            color: var(--color-text-bright);
+        }
+
+    /* *************************************************************************** */
+    /* COL-DX | RESULTS-FOUND                                                      */
+    /* *************************************************************************** */
+
+    .col-dx .results-found 
+    {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+          
+    @media (max-width: 768px) 
+    {
+        .col-dx .results-found 
+        {
+            /* 2 colonne su schermi più piccoli */
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    }
+        
+    @media (max-width: 480px) 
+    {
+        .col-dx .results-found 
+        {
+            /* 1 colonna su schermi molto piccoli */
+            grid-template-columns: 1fr;
+        }
+    }
+
+        .col-dx .results-found .result
+        {
+            background-color: var(--color-4);
+            border: 1px solid var(--color-7);
+        }
+
+        .col-dx .results-found .result:hover
+        {
+            box-shadow: 2px 4px var(--color-4);
+        }
+
+            .col-dx .results-found .result a
+            {
+                display: block;
+            }
+
+            .col-dx .results-found .result .tipologia
+            {
+                background-color: var(--color-1);
+                color: var(--color-text-bright);
+                padding: 10px;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+
+            .col-dx .results-found .result .dettaglio
+            {
+                background-color: var(--color-3);
+                padding: 15px 10px;
+                font-size: 14px;
+            }
+
+            .col-dx .results-found .result .altri-dettagli
+            {
+                background-color: var(--color-4);
+                color: var(--color-text-dark);
+                border-top: 1px solid var(--color-7);
+                padding: 10px;
+                font-size: 13.5px;
+                height: auto;
+            }
+
+            .col-dx .results-found .result .numero-fascicolo, .col-dx .results-found .result .data-distribuzione
+            {
+                text-align: center;
+            }
+
+            .col-dx .results-found .result .numero-fascicolo
+            {
+                border-bottom: 1px solid var(--color-7);
+            }
+
+    /* *************************************************************************** */
+    /* COL-DX | TABLE                                                              */
+    /* *************************************************************************** */
+
+    .pre-table-label
+    {
+        background-color: var(--color-1);
+        color: var(--color-text-bright);
+
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 14px;
+
+        padding: 10px;
+        border-top-left-radius: 6.5px;
+        border-top-right-radius: 6.5px;
+        border: 1px solid var(--color-7);
+    }
+
+    .recap-table
+    {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+        .col-dx table
+        {
+            overflow-x: scroll;
+            
+            width: 100%;
+
+            background-color: var(--color-3);
+            text-align: center;
+
+            border: 1px solid var(--color-7);
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 6.5px;
+        }
+        
+            .col-dx table input[type=checkbox]:checked
+            {
+                accent-color: var(--color-2);
+            }
+
+            /* *************************************************************************** */
+            /* COL-DX | T-HEAD                                                             */
+            /* *************************************************************************** */
+
+            .col-dx table thead
+            {
+                background-color: var(--color-1);
+            }
+        
+            .col-dx table thead .checkbox
+            {
+                width: 35px;
+                min-width: 35px;
+                max-width: 35px;
+                border-top-left-radius: 5px !important;
+            }
+        
+            .col-dx table thead .actions
+            {
+                width: 90px;
+                min-width: 90px;
+                max-width: 90px;
+                border-top-right-radius: 5px !important;
+            }
+
+            
+            .col-dx table thead tr
+            {
+                
+            }
+
+                .col-dx table thead tr th
+                {
+
+                }
+
+                    .col-dx table thead tr th button
+                    {
+                        padding: 10px;
+                        display: block;
+                        width: 100%;
+
+                        background-color: var(--color-1);
+                        color: var(--color-text-bright);
+                        border: 0;
+
+                        text-transform: uppercase;
+                        font-size: 12px;
+                    }
+
+                    .col-dx table thead tr th button:hover
+                    {
+                        color: var(--color-2);
+                    }
+
+            /* *************************************************************************** */
+            /* COL-DX | T-BODY                                                             */
+            /* *************************************************************************** */
+
+            .col-dx table tbody
+            {
+                
+            }
+
+                .col-dx table tbody tr
+                {
+                    
+                }
+
+                .col-dx table tbody tr:nth-child(odd)
+                {
+                    
+                }
+
+                .col-dx table tbody tr:nth-child(even)
+                {
+                    background-color: var(--color-4);
+                }
+
+                    .col-dx table tbody tr:hover td
+                    {
+                        background-color: var(--color-1);
+                    }
+
+                        .col-dx table tbody tr:hover td a
+                        {
+                            color: var(--color-2);
+                        }
+            
+            .col-dx table tbody tr td
+            {
+                        
+            }
+            
+            .col-dx table tbody tr td button
+            {
+                background-color: var(--color-3);
+                border: 1px solid var(--color-6);
+                border-radius: 6.5px;
+
+                padding: 5px;
+            }
+
+                .col-dx table tbody tr td button:hover
+                {
+                    background-color: var(--color-2);
+                    border: 1px solid var(--color-2);
+                    color: var(--color-text-bright);
+                }
+
+            .col-dx table tbody tr:last-child td:first-child
+            {
+                border-bottom-left-radius: 5px;
+            }
+
+            .col-dx table tbody tr:last-child td:last-child
+            {
+                border-bottom-right-radius: 5px;
+            }
+            
+                .col-dx table tbody tr td a
+                {
+                    display: block;
+                    padding: 5px;
+                }

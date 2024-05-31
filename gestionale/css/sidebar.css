@@ -1,0 +1,148 @@
+/* *************************************************************************** */
+/* COL-SX | SIDEBAR ANIMATION                                                  */
+/* *************************************************************************** */
+
+/* Animazione per l'apertura della sidebar */
+@keyframes sidebarAnimation
+{
+    from
+    {
+        left: -300px;
+        opacity: 0
+    } 
+    to 
+    {
+        left: 0;
+        opacity: 1
+    }
+}
+
+/* *************************************************************************** */
+/* COL-SX | SIDEBAR OPEN (BUTTON)                                              */
+/* *************************************************************************** */
+
+#sidebarOpen
+{
+    padding: 20px 3px;
+            
+    background-color: var(--color-3);
+    border: 1px solid var(--color-6);
+            
+    font-size: 15px;
+    color: var(--color-text-dark);
+    opacity: 65%;
+    
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+}
+
+/* *************************************************************************** */
+/* COL-SX | SIDEBAR-OVERLAY                                                    */
+/* *************************************************************************** */
+
+.sidebar-overlay
+{
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+    position: fixed;
+    top: 45px;    /* 45px perchè bisogna tener conto dell'height della navbar */
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer
+}
+
+/* *************************************************************************** */
+/* COL-SX | SIDEBAR CONTAINER                                                  */
+/* *************************************************************************** */
+
+.col-sx .container
+{
+    height: calc(100vh - 45px);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    /* *************************************************************************** */
+    /* COL-SX | SIDEBAR SEARCH FORM                                                */
+    /* *************************************************************************** */
+
+    .col-sx form
+    {
+        width: 100%;
+    }
+
+        .col-sx form input
+        {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 7px;
+
+            opacity: 60%;
+            border: 1px solid var(--color-text-dark);
+            border-radius: 2.5px;
+        }
+
+        .col-sx form input::placeholder
+        {
+            color: var(--color-text-dark);
+            font-size: 12px;
+        }
+
+        .col-sx form input:focus
+        {
+            border-color: var(--color-2);
+        }
+
+    /* *************************************************************************** */
+    /* COL-SX | SIDEBAR MENU (UL)                                                  */
+    /* *************************************************************************** */
+
+    .col-sx .menu
+    {
+
+    }
+
+        .col-sx .menu li
+        {
+            margin: 25px 0;
+        }
+
+            .col-sx .menu li a
+            {
+                display: block;
+                color: var(--color-text-dark);
+                opacity: 85%;
+            }
+                        
+            .col-sx .menu li a:hover
+            {
+                color: var(--color-2);
+            }
+
+                .col-sx .menu li a i
+                {
+                    margin-right: 10px;
+                }
+        
+    /* *************************************************************************** */
+    /* COL-SX | WEBSITE VERSION                                                    */
+     /* *************************************************************************** */
+
+    .col-sx .version
+    {
+        user-select: none;
+        text-align: center;
+        font-size: 14.5px;
+        color: var(--color-text-dark);
+        opacity: 50%;
+    }
