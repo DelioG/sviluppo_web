@@ -1,0 +1,48 @@
+INSERT INTO zona (nome) VALUES
+('Zona A'),
+('Zona B'),
+('Zona C'),
+('Zona D'),
+('Zona E');
+
+INSERT INTO referenti (cellulare, cognome, nome) VALUES
+('3331122334', 'Rossi', 'Mario'),
+('3355544332', 'Bianchi', 'Laura'),
+('3388899776', 'Verdi', 'Luigi'),
+('3401234567', 'Neri', 'Giovanna'),
+('3478901234', 'Gialli', 'Antonio');
+
+INSERT INTO famiglie (numero_fascicolo, note, numero_componenti_totali, numero_componenti_minorenni, id_referente, id_zona) VALUES
+(1001, 'Famiglia numerosa', 5, 3, 1, 1),
+(1002, 'Madre single con due figli', 3, 2, 2, 2),
+(1003, 'Famiglia senza minorenni', 2, 0, 3, 3),
+(1004, 'Famiglia con neonato', 4, 1, 4, 1),
+(1005, 'Coppia anziana', 2, 0, 5, 5);
+
+INSERT INTO prodotti (data_scadenza, produttore, lotto, nome, quantita) VALUES
+('2024-08-31', 'Produttore A', 'LOT001', 'Pasta', 100),
+('2024-09-15', 'Produttore B', 'LOT002', 'Riso', 80),
+('2024-07-31', 'Produttore C', 'LOT003', 'Latte', 120),
+('2024-10-20', 'Produttore A', 'LOT004', 'Pane', 150),
+('2024-08-10', 'Produttore D', 'LOT005', 'Frutta', 200);
+
+INSERT INTO distribuzioni (data_distribuzione) VALUES
+('2024-07-01'),
+('2024-07-05'),
+('2024-07-10'),
+('2024-07-15'),
+('2024-07-20');
+
+INSERT INTO distribuzioni_famiglie (id_distribuzione, id_famiglia) VALUES
+(1, 1),
+(1, 2),
+(2, 3),
+(2, 4),
+(3, 5);
+
+INSERT INTO distribuzioni_prodotti (id_distribuzione, id_prodotto) VALUES
+(1, 1),
+(1, 2),
+(2, 3),
+(2, 4),
+(3, 5);

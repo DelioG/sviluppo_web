@@ -1,0 +1,53 @@
+CREATE TABLE zone (
+    id BIGINT(20) AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE referenti (
+    id BIGINT(20) AUTO_INCREMENT PRIMARY KEY,
+    cellulare VARCHAR(15) NOT NULL,
+    cognome VARCHAR(30),
+    nome VARCHAR(30)
+);
+
+CREATE TABLE famiglie (
+    id BIGINT(20) AUTO_INCREMENT PRIMARY KEY,
+    numero_fascicolo BIGINT(20) NOT NULL UNIQUE,
+    note VARCHAR(256),
+    numero_componenti_totali INT(11) NOT NULL,
+    numero_componenti_minorenni INT(11),
+    id_referente BIGINT(20),
+    id_zona BIGINT(20),
+    CONSTRAINT fk_famiglie_referenti FOREIGN KEY (id_referente) REFERENCES referenti(id) ON DELETE SET NULL,
+    CONSTRAINT fk_famiglie_zona FOREIGN KEY (id_zona) REFERENCES zona(id) ON DELETE SET NULL
+);
+
+CREATE TABLE prodotti (
+    id BIGINT(20) AUTO_INCREMENT PRIMARY KEY,
+    data_scadenza DATE NOT NULL,
+    produttore VARCHAR(30) NOT NULL,
+    lotto VARCHAR(30) NOT NULL,
+    nome VARCHAR(30) NOT NULL,
+    quantita INT(11) NOT NULL
+);
+
+CREATE TABLE distribuzioni (
+    id BIGINT(20) AUTO_INCREMENT PRIMARY KEY,
+    data_distribuzione DATE NOT NULL
+);
+
+CREATE TABLE distribuzioni_famiglie (
+    id_distribuzione BIGINT(20) NOT NULL,
+    id_famiglia BIGINT(20) NOT NULL,
+    PRIMARY KEY (id_distribuzione, id_famiglia),
+    CONSTRAINT fk_distribuzioni_famiglie_distribuzione FOREIGN KEY (id_distribuzione) REFERENCES distribuzioni(id) ON DELETE CASCADE,
+    CONSTRAINT fk_distribuzioni_famiglie_famiglia FOREIGN KEY (id_famiglia) REFERENCES famiglie(id) ON DELETE CASCADE
+);
+
+CREATE TABLE distribuzioni_prodotti (
+    id_distribuzione BIGINT(20) NOT NULL,
+    id_prodotto BIGINT(20) NOT NULL,
+    PRIMARY KEY (id_distribuzione, id_prodotto),
+    CONSTRAINT fk_distribuzioni_prodotti_distribuzione FOREIGN KEY (id_distribuzione) REFERENCES distribuzioni(id) ON DELETE CASCADE,
+    CONSTRAINT fk_distribuzioni_prodotti_prodotto FOREIGN KEY (id_prodotto) REFERENCES prodotti(id) ON DELETE CASCADE
+);
