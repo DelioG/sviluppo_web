@@ -1,0 +1,139 @@
+
+/* ########################################################################### */
+/* COLUMNS-SYSTEM                                                              */
+/* ########################################################################### */
+
+.container
+{
+
+}
+
+    .row
+    {
+        display: flex;
+        flex-direction: row;
+    }
+
+        /* ########################################################################### */
+        /* COL-SX                                                                      */
+        /* ########################################################################### */
+
+        .col-sx
+        {
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: auto;
+            z-index: 3;
+
+            flex-grow: 0.35;
+            flex-shrink: 1;
+            flex-basis: auto;
+
+            background-color: var(--color-1);
+            box-shadow: 3px 4px 3px var(--color-7);
+        }
+
+            /* --------------------------------------------------------------------------- */
+            /* COL-SX > ANIMATION                                                          */
+            /* --------------------------------------------------------------------------- */
+
+            /* Animazione per l'apertura della sidebar */
+            @keyframes sidebarAnimation
+            {
+                from
+                {
+                    left: -300px;
+                    opacity: 0
+                } 
+                to 
+                {
+                    left: 0;
+                    opacity: 1
+                }
+            }
+
+
+        /* ########################################################################### */
+        /* COL-DX                                                                      */
+        /* ########################################################################### */
+
+        .col-dx
+        {
+            flex: 5;
+            height: 100vh;
+            overflow-y: auto;
+
+            background: linear-gradient(to top, var(--color-4), var(--color-5));
+        }
+
+
+/* ########################################################################### */
+/* COL-SX | SIDEBAR OPEN (BUTTON)                                              */
+/* ########################################################################### */
+
+#sidebarOpen
+{
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 5px;
+
+    padding: 10px;
+
+    box-shadow: 3px 4px 3px var(--color-7);
+    background-color: var(--color-6);
+    color: var(--color-1);
+    border: 0;
+    border-radius: 50%;
+    
+    font-size: 15px;
+    
+    cursor: pointer;
+}
+
+#sidebarOpen:hover
+{
+    background-color: var(--color-3);
+}
+
+    #sidebarOpen:hover i
+    {
+        color: var(--color-6);
+    }
+
+    .bounce 
+    {
+        animation: bounce 2s ease infinite;
+    }
+
+    @keyframes bounce 
+    {
+        70%  { transform:translateX(0%);  }
+        80%  { transform:translateX(15%); }
+        90%  { transform:translateX(0%);  }
+        95%  { transform:translateX(7%);  }
+        97%  { transform:translateX(0%);  }
+        99%  { transform:translateX(3%);  }
+        100% { transform:translateX(0);   }
+    }
+
+/* ########################################################################### */
+/* COL-SX | SIDEBAR-OVERLAY                                                    */
+/* ########################################################################### */
+
+.sidebar-overlay
+{
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer
+}
